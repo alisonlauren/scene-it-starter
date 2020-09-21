@@ -43,7 +43,7 @@ const movieHtmlArray = movieArray.map(function(currentMovie) {
     axios.get(`http://www.omdbapi.com/?apikey=b43843a0&s=${urlEncodedSearchString}`)
     .then((response)=> {
         movieContainer.innerHTML = renderMovies(response.data.Search)
-        moviesArray = response.data.search
+        movieData = response.data.Search
         console.log(response.data)
 
     })

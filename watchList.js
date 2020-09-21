@@ -7,10 +7,11 @@
                         <h5 class="card-title">${currentMovie.Title}</h5>
                         <p class="card-text">${currentMovie.Year}</p>
                         </div>
-                    </div>`
-        });
-    }
+                    </div>`  
+    })
     return movieHtmlArray.join('');
-    
+}
+
 const movieContainer = document.querySelector('.movies-container')
 movieContainer.innerHTML = renderMovies(JSON.parse(localStorage.getItem('movieData')));
+
