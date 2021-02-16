@@ -3,12 +3,12 @@ function saveToWatchList(imdbID) {
 const movieDataString = JSON.stringify(movieData);
 localStorage.setItem('movieData', movieDataString)
 let data = (localStorage.getItem('movieData'))
-let movie = movieData.find((currentMovie) => {return currentMovie.imdbID == imdbID})
+let movie = movieData.find((currentMovie) => {
+    return currentMovie.imdbID == imdbID})
 let watchList = JSON.parse(data)
     if(watchList === null) {
         watchList = []
     }
-
     watchList.push(movie)
 }
 
