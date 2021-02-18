@@ -1,17 +1,16 @@
 function saveToWatchList(imdbID) {
-// saveToWatch = []
-const movieDataString = JSON.stringify(movieData);
-localStorage.setItem('movieData', movieDataString)
-let data = (localStorage.getItem('movieData'))
-let movie = movieData.find((currentMovie) => {
-    return currentMovie.imdbID == imdbID})
-let watchList = JSON.parse(data)
-    if(watchList === null) {
-        watchList = []
+    // saveToWatch = []
+    const movieDataString = JSON.stringify(movieData);
+    localStorage.setItem('movieData', movieDataString)
+    let data = (localStorage.getItem('movieData'))
+    let movie = movieData.find((currentMovie) => {return currentMovie.imdbID == imdbID})
+    let watchList = JSON.parse(data)
+        if(watchList === null) {
+            watchList = []
+        }
+    
+        watchList.push(movie)
     }
-    watchList.push(movie)
-}
-
 
 // document.addEventListener('DOMContentLoaded', function() {
 function renderMovies(movieArray) {
@@ -25,11 +24,12 @@ const movieHtmlArray = movieArray.map(function(currentMovie) {
                 </div>
             </div>`
 });
-
-
-
     return movieHtmlArray.join('');
     }
+
+
+
+
     const movieContainer = document.querySelector('.movies-container')
 	// code here will execute after the document is loaded
 // });
